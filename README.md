@@ -59,12 +59,11 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 
 ## How This Works
 
-1. A GitHub Actions workflow runs daily (and can be triggered manually).
-2. It fetches my LeetCode stats from a public API.
-3. The stats are used to generate dynamic **SVG** progress bars.
-4. This README is automatically updated with the latest data.
+## How This Works
 
-## Example of the Progress Bar Images
+If you're interested in how this project operates or want to view the complete source code, please visit my [leetcode-progress](https://github.com/GiveMeAjob-job/leetcode-progress) repository.
+
+## The Progress Bar Images
 
 <p align="center">
   <img src="images/total_solved.svg" width="300"/>
