@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="50">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#80D0C7"/>
+            <stop offset="100%" stop-color="#0093E9"/>
+        </linearGradient>
+        <style>
+            .progress-bar {
+                fill: url(#gradient);
+            }
+            text {
+                font-weight: bold;
+                font-family: Verdana, Geneva, sans-serif;
+            }
+        </style>
+    </defs>
+    <!-- Background Bar -->
+    <rect x="0" y="15" width="300" height="20" rx="10" fill="#ccc"/>
+    <!-- Progress Bar -->
+    <rect x="0" y="15" width="2.45" height="20" rx="10" class="progress-bar"/>
+    <!-- Text -->
+    <text x="150" y="12" text-anchor="middle" font-size="12" fill="#333">Easy</text>
+    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">7/856 (0.82%)</text>
+</svg>
