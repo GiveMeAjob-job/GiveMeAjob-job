@@ -59,8 +59,6 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 
 ## How This Works
 
-## How This Works
-
 If you're interested in how this project operates or want to view the complete source code, please visit my [leetcode-progress](https://github.com/GiveMeAjob-job/leetcode-progress) repository.
 
 ## The Progress Bar Images
