@@ -1,0 +1,41 @@
+name: Update LeetCode Progress
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run LeetCode Progress Script
+        run: |
+          python Leetcode_stats.py
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 创建 images 文件夹（如不存在）
+          mkdir -p images
+
+          git config --global user.name 'GiveMeAjob-job'
+          git config --global user.email 'binjob9@gmail.com'
+          git add .
+          # 如果不想触发后续重复 CI，可以在 commit message 中加上 [skip ci]
+          git commit -m "Update LeetCode progress [skip ci]" || echo "No changes to commit"
+          git push
