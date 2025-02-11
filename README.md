@@ -27,13 +27,13 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 </tr>
 <tr>
   <td>Easy</td>
-  <td>7</td>
-  <td>856</td>
+  <td>8</td>
+  <td>857</td>
   <td><img src="./images/easy_solved.svg" width="200"/></td>
 </tr>
 <tr>
   <td>Medium</td>
-  <td>12</td>
+  <td>13</td>
   <td>1795</td>
   <td><img src="./images/medium_solved.svg" width="200"/></td>
 </tr>
@@ -45,8 +45,8 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 </tr>
 <tr>
   <td><b>Total</b></td>
-  <td><b>20</b></td>
-  <td><b>3449</b></td>
+  <td><b>22</b></td>
+  <td><b>3450</b></td>
   <td><img src="./images/total_solved.svg" width="200"/></td>
 </tr>
 </table>
