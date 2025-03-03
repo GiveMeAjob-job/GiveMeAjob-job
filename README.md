@@ -28,25 +28,25 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 <tr>
   <td>Easy</td>
   <td>10</td>
-  <td>862</td>
+  <td>863</td>
   <td><img src="./images/easy_solved.svg" width="200"/></td>
 </tr>
 <tr>
   <td>Medium</td>
   <td>22</td>
-  <td>1803</td>
+  <td>1806</td>
   <td><img src="./images/medium_solved.svg" width="200"/></td>
 </tr>
 <tr>
   <td>Hard</td>
   <td>2</td>
-  <td>805</td>
+  <td>806</td>
   <td><img src="./images/hard_solved.svg" width="200"/></td>
 </tr>
 <tr>
   <td><b>Total</b></td>
   <td><b>34</b></td>
-  <td><b>3470</b></td>
+  <td><b>3475</b></td>
   <td><img src="./images/total_solved.svg" width="200"/></td>
 </tr>
 </table>
