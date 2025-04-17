@@ -17,8 +17,8 @@
     <!-- Background Bar -->
     <rect x="0" y="15" width="300" height="20" rx="10" fill="#ccc"/>
     <!-- Progress Bar -->
-    <rect x="0" y="15" width="3.95" height="20" rx="10" class="progress-bar"/>
+    <rect x="0" y="15" width="3.94" height="20" rx="10" class="progress-bar"/>
     <!-- Text -->
     <text x="150" y="12" text-anchor="middle" font-size="12" fill="#333">Medium</text>
-    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">24/1825 (1.32%)</text>
+    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">24/1826 (1.31%)</text>
 </svg>
