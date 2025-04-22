@@ -40,13 +40,13 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 <tr>
   <td>Hard</td>
   <td>2</td>
-  <td>823</td>
+  <td>824</td>
   <td><img src="./images/hard_solved.svg" width="200"/></td>
 </tr>
 <tr>
   <td><b>Total</b></td>
   <td><b>36</b></td>
-  <td><b>3525</b></td>
+  <td><b>3526</b></td>
   <td><img src="./images/total_solved.svg" width="200"/></td>
 </tr>
 </table>
