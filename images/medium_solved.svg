@@ -20,5 +20,5 @@
     <rect x="0" y="15" width="3.91" height="20" rx="10" class="progress-bar"/>
     <!-- Text -->
     <text x="150" y="12" text-anchor="middle" font-size="12" fill="#333">Medium</text>
-    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">24/1840 (1.30%)</text>
+    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">24/1842 (1.30%)</text>
 </svg>
