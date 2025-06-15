@@ -28,7 +28,7 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 <tr>
   <td>Easy</td>
   <td>10</td>
-  <td>880</td>
+  <td>881</td>
   <td><img src="./images/easy_solved.svg" width="200"/></td>
 </tr>
 <tr>
@@ -46,7 +46,7 @@ Hello! I'm **GiveMeAJob9**, welcome to my LeetCode progress tracker. I solve cod
 <tr>
   <td><b>Total</b></td>
   <td><b>36</b></td>
-  <td><b>3580</b></td>
+  <td><b>3581</b></td>
   <td><img src="./images/total_solved.svg" width="200"/></td>
 </tr>
 </table>
