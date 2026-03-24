@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="dashboard_title dashboard_desc">
+  <title id="dashboard_title">LeetCode dashboard for GiveMeAJob9</title>
+  <desc id="dashboard_desc">A visual summary of solved problems, completion percentages, acceptance rate, and ranking.</desc>
+  <defs>
+    <linearGradient id="dashboard_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111f" />
+      <stop offset="55%" stop-color="#0b1328" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="dashboard_accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#14b8a6" />
+    </linearGradient>
+    <pattern id="dashboard_grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.35" />
+    </pattern>
+  </defs>
+  <rect width="900" height="320" rx="28" fill="url(#dashboard_bg)" />
+  <rect width="900" height="320" rx="28" fill="url(#dashboard_grid)" />
+  <circle cx="774" cy="60" r="74" fill="#f97316" opacity="0.10" />
+  <circle cx="842" cy="266" r="94" fill="#14b8a6" opacity="0.08" />
+  <rect x="24" y="24" width="852" height="272" rx="24" fill="#0a1324" fill-opacity="0.86" stroke="#1f2b45" />
+
+  <text x="48" y="58" fill="#f8fafc" font-size="28" font-weight="700" font-family="Segoe UI,Arial,sans-serif">LeetCode Progress Dashboard</text>
+  <text x="48" y="84" fill="#94a3b8" font-size="14" font-family="Segoe UI,Arial,sans-serif">@GiveMeAJob9 | synced with official LeetCode GraphQL</text>
+
+  <text x="48" y="132" fill="#94a3b8" font-size="14" letter-spacing="1.1" font-family="SFMono-Regular,Consolas,Monaco,monospace">TOTAL SOLVED</text>
+  <text x="48" y="182" fill="white" font-size="52" font-weight="700" font-family="Segoe UI,Arial,sans-serif">36</text>
+  <text x="158" y="182" fill="#94a3b8" font-size="22" font-family="Segoe UI,Arial,sans-serif">/ 3,879</text>
+  <rect x="48" y="204" width="320" height="16" rx="8" fill="#162237" />
+  <rect x="48" y="204" width="28.00" height="16" rx="8" fill="url(#dashboard_accent)" />
+  <text x="48" y="248" fill="#e2e8f0" font-size="18" font-family="Segoe UI,Arial,sans-serif">0.93% of all public problems completed</text>
+
+  <rect x="48" y="264" width="156" height="48" rx="18" fill="#111c30" stroke="#1f2b45" />
+  <text x="64" y="286" fill="#94a3b8" font-size="12" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">ACCEPTANCE</text>
+  <text x="64" y="304" fill="white" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">100.00%</text>
+
+  <rect x="220" y="264" width="200" height="48" rx="18" fill="#111c30" stroke="#1f2b45" />
+  <text x="236" y="286" fill="#94a3b8" font-size="12" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">GLOBAL RANK</text>
+  <text x="236" y="304" fill="white" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">#2,945,771</text>
+
+  <text x="470" y="58" fill="#94a3b8" font-size="14" letter-spacing="1" font-family="SFMono-Regular,Consolas,Monaco,monospace">DIFFICULTY BREAKDOWN</text>
+  
+  <defs>
+    <linearGradient id="easy_dashboard_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#84cc16" />
+    </linearGradient>
+  </defs>
+  <text x="470" y="112" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Easy</text>
+  <text x="792" y="112" fill="#94a3b8" font-size="16" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">10 / 933</text>
+  <rect x="470" y="130" width="260" height="14" rx="7" fill="#162237" />
+  <rect x="470" y="130" width="20.00" height="14" rx="7" fill="url(#easy_dashboard_gradient)" />
+  <text x="792" y="143" fill="#84cc16" font-size="14" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.07%</text>
+    
+  <defs>
+    <linearGradient id="medium_dashboard_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <text x="470" y="168" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Medium</text>
+  <text x="792" y="168" fill="#94a3b8" font-size="16" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">24 / 2,030</text>
+  <rect x="470" y="186" width="260" height="14" rx="7" fill="#162237" />
+  <rect x="470" y="186" width="20.00" height="14" rx="7" fill="url(#medium_dashboard_gradient)" />
+  <text x="792" y="199" fill="#f97316" font-size="14" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.18%</text>
+    
+  <defs>
+    <linearGradient id="hard_dashboard_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <text x="470" y="224" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Hard</text>
+  <text x="792" y="224" fill="#94a3b8" font-size="16" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">2 / 916</text>
+  <rect x="470" y="242" width="260" height="14" rx="7" fill="#162237" />
+  <rect x="470" y="242" width="20.00" height="14" rx="7" fill="url(#hard_dashboard_gradient)" />
+  <text x="792" y="255" fill="#ec4899" font-size="14" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">0.22%</text>
+    
+  <text x="470" y="282" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">Last refresh: 2026-03-23 23:50 UTC</text>
+  <text x="470" y="302" fill="#64748b" font-size="12" font-family="Segoe UI,Arial,sans-serif">Generated automatically by Python + GitHub Actions.</text>
+</svg>

@@ -1,24 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="50">
-    <defs>
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#80D0C7"/>
-            <stop offset="100%" stop-color="#0093E9"/>
-        </linearGradient>
-        <style>
-            .progress-bar {
-                fill: url(#gradient);
-            }
-            text {
-                font-weight: bold;
-                font-family: Verdana, Geneva, sans-serif;
-            }
-        </style>
-    </defs>
-    <!-- Background Bar -->
-    <rect x="0" y="15" width="300" height="20" rx="10" fill="#ccc"/>
-    <!-- Progress Bar -->
-    <rect x="0" y="15" width="3.58" height="20" rx="10" class="progress-bar"/>
-    <!-- Text -->
-    <text x="150" y="12" text-anchor="middle" font-size="12" fill="#333">Medium</text>
-    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">24/2010 (1.19%)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140" role="img" aria-labelledby="medium_solved_title medium_solved_desc">
+  <title id="medium_solved_title">Medium progress card</title>
+  <desc id="medium_solved_desc">Medium: 24 solved out of 2030 total problems.</desc>
+  <defs>
+    <linearGradient id="medium_solved_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <filter id="medium_solved_glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0"
+      />
+    </filter>
+  </defs>
+  <rect width="420" height="140" rx="22" fill="#081120" />
+  <rect x="1" y="1" width="418" height="138" rx="21" fill="#0d172a" stroke="#1f2b45" />
+  <circle cx="360" cy="28" r="34" fill="#f59e0b" opacity="0.18" filter="url(#medium_solved_glow)" />
+  <rect x="24" y="24" width="56" height="56" rx="16" fill="#2f2008" />
+  <text x="52" y="58" fill="white" font-size="26" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">M</text>
+  <text x="100" y="44" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Medium</text>
+  <text x="100" y="73" fill="white" font-size="27" font-weight="700" font-family="Segoe UI,Arial,sans-serif">24</text>
+  <text x="170" y="73" fill="#94a3b8" font-size="16" font-family="Segoe UI,Arial,sans-serif">/ 2,030</text>
+  <text x="380" y="44" fill="#f97316" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.18%</text>
+  <rect x="100" y="92" width="280" height="14" rx="7" fill="#162237" />
+  <rect x="100" y="92" width="24.00" height="14" rx="7" fill="url(#medium_solved_gradient)" />
+  <text x="24" y="122" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">Core interview territory and the main growth lane.</text>
 </svg>

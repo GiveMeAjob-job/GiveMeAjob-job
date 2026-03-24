@@ -1,24 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="50">
-    <defs>
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#80D0C7"/>
-            <stop offset="100%" stop-color="#0093E9"/>
-        </linearGradient>
-        <style>
-            .progress-bar {
-                fill: url(#gradient);
-            }
-            text {
-                font-weight: bold;
-                font-family: Verdana, Geneva, sans-serif;
-            }
-        </style>
-    </defs>
-    <!-- Background Bar -->
-    <rect x="0" y="15" width="300" height="20" rx="10" fill="#ccc"/>
-    <!-- Progress Bar -->
-    <rect x="0" y="15" width="0.66" height="20" rx="10" class="progress-bar"/>
-    <!-- Text -->
-    <text x="150" y="12" text-anchor="middle" font-size="12" fill="#333">Hard</text>
-    <text x="150" y="32" text-anchor="middle" font-size="12" fill="#000">2/909 (0.22%)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140" role="img" aria-labelledby="hard_solved_title hard_solved_desc">
+  <title id="hard_solved_title">Hard progress card</title>
+  <desc id="hard_solved_desc">Hard: 2 solved out of 916 total problems.</desc>
+  <defs>
+    <linearGradient id="hard_solved_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="hard_solved_glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0"
+      />
+    </filter>
+  </defs>
+  <rect width="420" height="140" rx="22" fill="#081120" />
+  <rect x="1" y="1" width="418" height="138" rx="21" fill="#0d172a" stroke="#1f2b45" />
+  <circle cx="360" cy="28" r="34" fill="#ef4444" opacity="0.18" filter="url(#hard_solved_glow)" />
+  <rect x="24" y="24" width="56" height="56" rx="16" fill="#301019" />
+  <text x="52" y="58" fill="white" font-size="26" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">H</text>
+  <text x="100" y="44" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Hard</text>
+  <text x="100" y="73" fill="white" font-size="27" font-weight="700" font-family="Segoe UI,Arial,sans-serif">2</text>
+  <text x="170" y="73" fill="#94a3b8" font-size="16" font-family="Segoe UI,Arial,sans-serif">/ 916</text>
+  <text x="380" y="44" fill="#ec4899" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">0.22%</text>
+  <rect x="100" y="92" width="280" height="14" rx="7" fill="#162237" />
+  <rect x="100" y="92" width="24.00" height="14" rx="7" fill="url(#hard_solved_gradient)" />
+  <text x="24" y="122" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">Stretch problems that build deeper problem-solving range.</text>
 </svg>
