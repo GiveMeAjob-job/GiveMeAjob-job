@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="banner_title banner_desc">
   <title id="banner_title">GiveMeAJob9 profile banner</title>
-  <desc id="banner_desc">A polished profile banner showing Alex Wang's focus on backend engineering, automation, and public progress.</desc>
+  <desc id="banner_desc">A profile banner showing Alex Wang's focus on backend engineering, automation, and practical projects.</desc>
   <defs>
     <linearGradient id="banner_bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#06111f" />
@@ -30,8 +30,8 @@
 
   <rect width="1200" height="340" rx="32" fill="url(#banner_bg)" />
   <rect width="1200" height="340" rx="32" fill="url(#banner_grid)" />
-  <circle cx="1064" cy="72" r="100" fill="#f97316" opacity="0.12" filter="url(#banner_glow)" />
-  <circle cx="1118" cy="286" r="120" fill="#14b8a6" opacity="0.08" filter="url(#banner_glow)" />
+  <circle cx="1048" cy="72" r="96" fill="#f97316" opacity="0.10" filter="url(#banner_glow)" />
+  <circle cx="1106" cy="284" r="118" fill="#14b8a6" opacity="0.08" filter="url(#banner_glow)" />
 
   <rect x="22" y="22" width="1156" height="296" rx="28" fill="#081120" fill-opacity="0.88" stroke="#213149" />
   <rect x="22" y="22" width="1156" height="48" rx="28" fill="#0d182c" />
@@ -40,50 +40,49 @@
   <circle cx="102" cy="46" r="7" fill="#22c55e" />
   <text x="134" y="51" fill="#93a4bd" font-size="15" font-family="SFMono-Regular,Consolas,Monaco,monospace">~/github/profile-showcase</text>
 
-  <circle cx="120" cy="138" r="44" fill="#10203a" stroke="#2a3a54" />
-  <circle cx="120" cy="138" r="28" fill="#132a42" />
-  <text x="120" y="147" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">AW</text>
+  <circle cx="120" cy="142" r="42" fill="#10203a" stroke="#2a3a54" />
+  <circle cx="120" cy="142" r="24" fill="#132a42" />
+  <text x="120" y="151" fill="#ffffff" font-size="23" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">AW</text>
 
-  <text x="184" y="112" fill="#7dd3fc" font-size="12" font-weight="700" letter-spacing="1.3" font-family="SFMono-Regular,Consolas,Monaco,monospace">PROFILE README</text>
-  <text x="184" y="150" fill="#ffffff" font-size="44" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Alex Wang / GiveMeAJob9</text>
-  <text x="184" y="180" fill="#d2dae8" font-size="20" font-family="Segoe UI,Arial,sans-serif">Backend-focused builder shipping automation, practical tools, and visible progress.</text>
-  <rect x="184" y="194" width="420" height="4" rx="2" fill="url(#banner_accent)" />
+  <text x="184" y="110" fill="#7dd3fc" font-size="12" font-weight="700" letter-spacing="1.3" font-family="SFMono-Regular,Consolas,Monaco,monospace">PROFILE README</text>
+  <text x="184" y="150" fill="#ffffff" font-size="40" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Alex Wang / GiveMeAJob9</text>
+  <text x="184" y="180" fill="#d2dae8" font-size="18" font-family="Segoe UI,Arial,sans-serif">Backend-focused builder shipping automation, useful tools,</text>
+  <text x="184" y="205" fill="#d2dae8" font-size="18" font-family="Segoe UI,Arial,sans-serif">and visible progress in public.</text>
+  <rect x="184" y="220" width="420" height="4" rx="2" fill="url(#banner_accent)" />
 
-  <rect x="184" y="214" width="86" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
-  <text x="227" y="232" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">PYTHON</text>
-  <rect x="282" y="214" width="96" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
-  <text x="330" y="232" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">BACKEND</text>
-  <rect x="390" y="214" width="124" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
-  <text x="452" y="232" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">AUTOMATION</text>
-  <rect x="526" y="214" width="126" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
-  <text x="589" y="232" fill="#d1fae5" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">OPEN TO WORK</text>
+  <rect x="184" y="238" width="86" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="227" y="256" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">PYTHON</text>
+  <rect x="282" y="238" width="96" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="330" y="256" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">BACKEND</text>
+  <rect x="390" y="238" width="124" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="452" y="256" fill="#e5f0ff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">AUTOMATION</text>
+  <rect x="526" y="238" width="126" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="589" y="256" fill="#d1fae5" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">OPEN TO WORK</text>
 
-  <text x="72" y="274" fill="#14b8a6" font-size="17" font-family="SFMono-Regular,Consolas,Monaco,monospace">&gt; focus</text>
-  <text x="170" y="274" fill="#e2e8f0" font-size="17" font-family="Segoe UI,Arial,sans-serif">Python automation, backend projects, algorithms, and clearer project storytelling.</text>
+  <text x="72" y="292" fill="#14b8a6" font-size="17" font-family="SFMono-Regular,Consolas,Monaco,monospace">&gt; focus</text>
+  <text x="170" y="292" fill="#e2e8f0" font-size="17" font-family="Segoe UI,Arial,sans-serif">Python automation, backend systems, algorithms, and project polish.</text>
 
-  <text x="72" y="302" fill="#14b8a6" font-size="17" font-family="SFMono-Regular,Consolas,Monaco,monospace">&gt; approach</text>
-  <text x="198" y="302" fill="#e2e8f0" font-size="17" font-family="Segoe UI,Arial,sans-serif">Ship real work, keep it updated, and make the progress easy for others to evaluate.</text>
+  <text x="72" y="318" fill="#14b8a6" font-size="17" font-family="SFMono-Regular,Consolas,Monaco,monospace">&gt; approach</text>
+  <text x="198" y="318" fill="#e2e8f0" font-size="17" font-family="Segoe UI,Arial,sans-serif">Ship real work, keep it updated, and make it easy to evaluate.</text>
 
-  <rect x="774" y="98" width="336" height="58" rx="22" fill="url(#banner_card)" stroke="#24344d" />
-  <rect x="792" y="114" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
-  <text x="818" y="131" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">01</text>
-  <text x="862" y="122" fill="#ffffff" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Build useful automation</text>
-  <text x="862" y="141" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">APIs, scripts, GitHub Actions, and practical internal tooling.</text>
+  <rect x="764" y="96" width="356" height="64" rx="24" fill="url(#banner_card)" stroke="#24344d" />
+  <rect x="784" y="114" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
+  <text x="810" y="131" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">01</text>
+  <text x="862" y="128" fill="#ffffff" font-size="17" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Build useful automation</text>
+  <text x="862" y="147" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">APIs, scripts, workflow automation,</text>
+  <text x="862" y="164" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">and tools that save time.</text>
 
-  <rect x="774" y="170" width="336" height="58" rx="22" fill="url(#banner_card)" stroke="#24344d" />
-  <rect x="792" y="186" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
-  <text x="818" y="203" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">02</text>
-  <text x="862" y="194" fill="#ffffff" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Keep learning in public</text>
-  <text x="862" y="213" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">LeetCode progress, visible iteration, and cleaner project presentation.</text>
+  <rect x="764" y="176" width="356" height="64" rx="24" fill="url(#banner_card)" stroke="#24344d" />
+  <rect x="784" y="194" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
+  <text x="810" y="211" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">02</text>
+  <text x="862" y="208" fill="#ffffff" font-size="17" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Keep learning in public</text>
+  <text x="862" y="227" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">LeetCode progress, visible iteration,</text>
+  <text x="862" y="244" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">and clearer project presentation.</text>
 
-  <rect x="774" y="242" width="336" height="58" rx="22" fill="url(#banner_card)" stroke="#24344d" />
-  <rect x="792" y="258" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
-  <text x="818" y="275" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">03</text>
-  <text x="862" y="266" fill="#ffffff" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Aim for practical impact</text>
-  <text x="862" y="285" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">Projects that are easy to explain, test, and improve over time.</text>
-
-  <path d="M 734 278 C 770 252, 804 258, 838 226 S 910 150, 958 168 S 1028 228, 1082 194" fill="none" stroke="url(#banner_accent)" stroke-width="4" stroke-linecap="round" opacity="0.75" />
-  <circle cx="838" cy="226" r="5" fill="#14b8a6" />
-  <circle cx="958" cy="168" r="5" fill="#f97316" />
-  <circle cx="1082" cy="194" r="5" fill="#14b8a6" />
+  <rect x="764" y="256" width="356" height="64" rx="24" fill="url(#banner_card)" stroke="#24344d" />
+  <rect x="784" y="274" width="52" height="26" rx="13" fill="#101b30" stroke="#26374f" />
+  <text x="810" y="291" fill="#f8fafc" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">03</text>
+  <text x="862" y="288" fill="#ffffff" font-size="17" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Aim for practical impact</text>
+  <text x="862" y="307" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">Projects that are easy to explain,</text>
+  <text x="862" y="324" fill="#96a7c0" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">test, and improve over time.</text>
 </svg>
