@@ -192,7 +192,7 @@ def build_progress_card(
     safe_caption = escape(theme["caption"])
 
     svg = f"""
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="160" viewBox="0 0 440 160" role="img" aria-labelledby="{filename.stem}_title {filename.stem}_desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="172" viewBox="0 0 440 172" role="img" aria-labelledby="{filename.stem}_title {filename.stem}_desc">
   <title id="{filename.stem}_title">{safe_title} progress card</title>
   <desc id="{filename.stem}_desc">{safe_title}: {solved} solved out of {total} total problems.</desc>
   <defs>
@@ -216,9 +216,9 @@ def build_progress_card(
       <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#223048" stroke-width="1" opacity="0.35" />
     </pattern>
   </defs>
-  <rect width="440" height="160" rx="26" fill="#050b15" />
-  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#{panel_id})" stroke="#1f2c43" />
-  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#{filename.stem}_pattern)" />
+  <rect width="440" height="172" rx="26" fill="#050b15" />
+  <rect x="1" y="1" width="438" height="170" rx="25" fill="url(#{panel_id})" stroke="#1f2c43" />
+  <rect x="1" y="1" width="438" height="170" rx="25" fill="url(#{filename.stem}_pattern)" />
   <circle cx="364" cy="28" r="62" fill="{theme['start']}" opacity="0.16" filter="url(#{glow_id})" />
   <circle cx="410" cy="148" r="70" fill="{theme['end']}" opacity="0.08" />
   <rect x="24" y="24" width="64" height="64" rx="22" fill="{theme['soft']}" stroke="#243149" />
@@ -227,14 +227,14 @@ def build_progress_card(
   <text x="104" y="66" fill="#f8fafc" font-size="24" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{safe_title}</text>
   <rect x="346" y="24" width="70" height="30" rx="15" fill="#101a2d" stroke="{theme['end']}" stroke-opacity="0.45" />
   <text x="381" y="44" fill="#f8fafc" font-size="13" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
-  <text x="104" y="98" fill="#ffffff" font-size="30" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,}</text>
-  <text x="182" y="98" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ {total:,}</text>
-  <rect x="104" y="112" width="286" height="14" rx="7" fill="#162338" />
-  <rect x="104" y="112" width="{fill_width:.2f}" height="14" rx="7" fill="url(#{gradient_id})" />
-  <rect x="104" y="112" width="{shine_width:.2f}" height="14" rx="7" fill="#ffffff" opacity="0.16" />
-  <rect x="24" y="120" width="90" height="24" rx="12" fill="#0f1a2d" stroke="#233149" />
-  <text x="69" y="136" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{remaining:,} LEFT</text>
-  <text x="126" y="136" fill="#9fb0c8" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">{safe_caption}</text>
+  <text x="104" y="104" fill="#ffffff" font-size="32" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,}</text>
+  <text x="184" y="104" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ {total:,}</text>
+  <rect x="104" y="120" width="286" height="14" rx="7" fill="#162338" />
+  <rect x="104" y="120" width="{fill_width:.2f}" height="14" rx="7" fill="url(#{gradient_id})" />
+  <rect x="104" y="120" width="{shine_width:.2f}" height="14" rx="7" fill="#ffffff" opacity="0.16" />
+  <rect x="24" y="140" width="96" height="28" rx="14" fill="#0f1a2d" stroke="#233149" />
+  <text x="72" y="158" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{remaining:,} LEFT</text>
+  <text x="132" y="158" fill="#9fb0c8" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">{safe_caption}</text>
 </svg>
     """
     write_text(filename, svg)
@@ -251,13 +251,13 @@ def build_dashboard(data: dict[str, Any], filename: Path) -> None:
     to_target = max(next_target - data["totalSolved"], 0)
 
     rows = [
-        dashboard_row("Easy", data["easySolved"], data["totalEasy"], easy_percent, 112, CARD_THEMES["Easy"]),
-        dashboard_row("Medium", data["mediumSolved"], data["totalMedium"], medium_percent, 190, CARD_THEMES["Medium"]),
-        dashboard_row("Hard", data["hardSolved"], data["totalHard"], hard_percent, 268, CARD_THEMES["Hard"]),
+        dashboard_row("Easy", data["easySolved"], data["totalEasy"], easy_percent, 132, CARD_THEMES["Easy"]),
+        dashboard_row("Medium", data["mediumSolved"], data["totalMedium"], medium_percent, 218, CARD_THEMES["Medium"]),
+        dashboard_row("Hard", data["hardSolved"], data["totalHard"], hard_percent, 304, CARD_THEMES["Hard"]),
     ]
 
     svg = f"""
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="388" viewBox="0 0 920 388" role="img" aria-labelledby="dashboard_title dashboard_desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="404" viewBox="0 0 920 404" role="img" aria-labelledby="dashboard_title dashboard_desc">
   <title id="dashboard_title">LeetCode dashboard for {escape(data['username'])}</title>
   <desc id="dashboard_desc">A visual summary of solved problems, completion percentages, acceptance rate, and ranking.</desc>
   <defs>
@@ -286,11 +286,11 @@ def build_dashboard(data: dict[str, Any], filename: Path) -> None:
       />
     </filter>
   </defs>
-  <rect width="920" height="388" rx="30" fill="url(#dashboard_bg)" />
-  <rect width="920" height="388" rx="30" fill="url(#dashboard_grid)" />
+  <rect width="920" height="404" rx="30" fill="url(#dashboard_bg)" />
+  <rect width="920" height="404" rx="30" fill="url(#dashboard_grid)" />
   <circle cx="760" cy="54" r="92" fill="#f97316" opacity="0.12" filter="url(#dashboard_glow)" />
   <circle cx="842" cy="316" r="120" fill="#14b8a6" opacity="0.08" filter="url(#dashboard_glow)" />
-  <rect x="22" y="22" width="876" height="344" rx="26" fill="#081120" fill-opacity="0.82" stroke="#213149" />
+  <rect x="22" y="22" width="876" height="360" rx="26" fill="#081120" fill-opacity="0.82" stroke="#213149" />
 
   <text x="42" y="58" fill="#f8fafc" font-size="29" font-weight="700" font-family="Segoe UI,Arial,sans-serif">LeetCode Progress Dashboard</text>
   <text x="42" y="82" fill="#93a4bd" font-size="14" font-family="Segoe UI,Arial,sans-serif">@{escape(data['username'])} | official GraphQL source | rendered as custom SVG</text>
@@ -300,37 +300,36 @@ def build_dashboard(data: dict[str, Any], filename: Path) -> None:
   <rect x="758" y="38" width="118" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
   <text x="817" y="56" fill="#d1fae5" font-size="11.5" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">AUTO REFRESH</text>
 
-  <rect x="42" y="104" width="392" height="244" rx="28" fill="url(#dashboard_card)" stroke="#22314a" />
+  <rect x="42" y="112" width="392" height="238" rx="28" fill="url(#dashboard_card)" stroke="#22314a" />
   <circle cx="334" cy="152" r="62" fill="#f97316" opacity="0.14" filter="url(#dashboard_glow)" />
   <circle cx="364" cy="270" r="72" fill="#14b8a6" opacity="0.08" />
 
-  <text x="66" y="136" fill="#8fa2bb" font-size="12" letter-spacing="1.2" font-family="SFMono-Regular,Consolas,Monaco,monospace">TOTAL SOLVED</text>
-  <rect x="304" y="118" width="108" height="46" rx="18" fill="#0f1a2d" stroke="#24344d" />
-  <text x="358" y="138" fill="#8fa2bb" font-size="11" letter-spacing="0.8" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">GLOBAL RANK</text>
-  <text x="358" y="156" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">{ranking_compact}</text>
+  <text x="66" y="144" fill="#8fa2bb" font-size="12" letter-spacing="1.2" font-family="SFMono-Regular,Consolas,Monaco,monospace">TOTAL SOLVED</text>
+  <rect x="304" y="126" width="108" height="46" rx="18" fill="#0f1a2d" stroke="#24344d" />
+  <text x="358" y="146" fill="#8fa2bb" font-size="11" letter-spacing="0.8" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">GLOBAL RANK</text>
+  <text x="358" y="164" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">{ranking_compact}</text>
 
-  <text x="66" y="202" fill="#ffffff" font-size="60" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{data['totalSolved']:,}</text>
-  <text x="196" y="202" fill="#94a3b8" font-size="24" font-family="Segoe UI,Arial,sans-serif">/ {data['totalQuestions']:,}</text>
-  <text x="66" y="232" fill="#dbe5f4" font-size="18" font-family="Segoe UI,Arial,sans-serif">{total_percent:.2f}% of all public LeetCode problems completed</text>
+  <text x="66" y="210" fill="#ffffff" font-size="60" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{data['totalSolved']:,}</text>
+  <text x="196" y="210" fill="#94a3b8" font-size="24" font-family="Segoe UI,Arial,sans-serif">/ {data['totalQuestions']:,}</text>
+  <text x="66" y="240" fill="#dbe5f4" font-size="18" font-family="Segoe UI,Arial,sans-serif">{total_percent:.2f}% of all public LeetCode problems completed</text>
 
-  <rect x="66" y="248" width="306" height="18" rx="9" fill="#162339" />
-  <rect x="66" y="248" width="{progress_bar_width(total_percent, max_width=306, min_width=30):.2f}" height="18" rx="9" fill="url(#dashboard_accent)" />
-  <rect x="66" y="248" width="{min(progress_bar_width(total_percent, max_width=306, min_width=30), 120):.2f}" height="18" rx="9" fill="#ffffff" opacity="0.16" />
+  <rect x="66" y="258" width="306" height="18" rx="9" fill="#162339" />
+  <rect x="66" y="258" width="{progress_bar_width(total_percent, max_width=306, min_width=30):.2f}" height="18" rx="9" fill="url(#dashboard_accent)" />
+  <rect x="66" y="258" width="{min(progress_bar_width(total_percent, max_width=306, min_width=30), 120):.2f}" height="18" rx="9" fill="#ffffff" opacity="0.16" />
 
-  <rect x="66" y="286" width="148" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
-  <text x="84" y="306" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">NEXT TARGET</text>
-  <text x="84" y="323" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{next_target:,}</text>
-  <text x="150" y="323" fill="#9fb0c8" font-size="13" font-family="Segoe UI,Arial,sans-serif">{to_target:,} to go</text>
+  <rect x="66" y="294" width="148" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
+  <text x="84" y="314" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">NEXT TARGET</text>
+  <text x="84" y="331" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{next_target:,}</text>
+  <text x="150" y="331" fill="#9fb0c8" font-size="13" font-family="Segoe UI,Arial,sans-serif">{to_target:,} to go</text>
 
-  <rect x="228" y="286" width="144" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
-  <text x="246" y="306" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">ACCEPTANCE</text>
-  <text x="246" y="323" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{acceptance}</text>
+  <rect x="228" y="294" width="144" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
+  <text x="246" y="314" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">ACCEPTANCE</text>
+  <text x="246" y="331" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{acceptance}</text>
 
-  <text x="66" y="352" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Last refresh: {escape(data['lastUpdated'])} | Generated automatically by Python + GitHub Actions.</text>
+  <text x="474" y="110" fill="#93a4bd" font-size="13" letter-spacing="1" font-family="SFMono-Regular,Consolas,Monaco,monospace">DIFFICULTY BREAKDOWN</text>
 
-  <text x="474" y="82" fill="#93a4bd" font-size="13" letter-spacing="1" font-family="SFMono-Regular,Consolas,Monaco,monospace">DIFFICULTY BREAKDOWN</text>
   {''.join(rows)}
-  <text x="474" y="354" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Color and layout are tuned for GitHub README rendering.</text>
+  <text x="42" y="378" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Last refresh: {escape(data['lastUpdated'])} | Generated automatically by Python + GitHub Actions.</text>
 </svg>
     """
     write_text(filename, svg)
@@ -347,14 +346,14 @@ def dashboard_row(label: str, solved: int, total: int, percent: float, y: int, t
       <stop offset="100%" stop-color="{theme['end']}" />
     </linearGradient>
   </defs>
-  <rect x="474" y="{y}" width="386" height="60" rx="20" fill="#0c1729" stroke="#22314a" />
-  <rect x="492" y="{y + 15}" width="58" height="30" rx="15" fill="#101b30" stroke="{theme['end']}" stroke-opacity="0.30" />
-  <text x="521" y="{y + 34}" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{escape(label.upper())}</text>
-  <text x="572" y="{y + 28}" fill="#f8fafc" font-size="19" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,} solved</text>
-  <text x="572" y="{y + 47}" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">{remaining:,} remaining of {total:,}</text>
-  <rect x="716" y="{y + 18}" width="126" height="12" rx="6" fill="#152239" />
-  <rect x="716" y="{y + 18}" width="{fill_width:.2f}" height="12" rx="6" fill="url(#{gradient_id})" />
-  <text x="842" y="{y + 48}" fill="{theme['end']}" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
+  <rect x="474" y="{y}" width="386" height="66" rx="22" fill="#0c1729" stroke="#22314a" />
+  <rect x="492" y="{y + 18}" width="62" height="32" rx="16" fill="#101b30" stroke="{theme['end']}" stroke-opacity="0.30" />
+  <text x="523" y="{y + 39}" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{escape(label.upper())}</text>
+  <text x="574" y="{y + 30}" fill="#f8fafc" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,} solved</text>
+  <text x="574" y="{y + 52}" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">{remaining:,} remaining of {total:,}</text>
+  <rect x="716" y="{y + 22}" width="126" height="12" rx="6" fill="#152239" />
+  <rect x="716" y="{y + 22}" width="{fill_width:.2f}" height="12" rx="6" fill="url(#{gradient_id})" />
+  <text x="842" y="{y + 56}" fill="{theme['end']}" font-size="15" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
     """
 
 
