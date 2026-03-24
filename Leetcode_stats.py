@@ -45,28 +45,28 @@ CARD_THEMES = {
         "end": "#14b8a6",
         "soft": "#132238",
         "badge": "ALL",
-        "caption": "Overall progress across the full LeetCode problem set.",
+        "caption": "Progress across the full LeetCode pool.",
     },
     "Easy": {
         "start": "#22c55e",
         "end": "#84cc16",
         "soft": "#132a1d",
         "badge": "E",
-        "caption": "Warm-up reps that keep the fundamentals sharp.",
+        "caption": "Keeps the fundamentals sharp.",
     },
     "Medium": {
         "start": "#f59e0b",
         "end": "#f97316",
         "soft": "#2f2008",
         "badge": "M",
-        "caption": "Core interview territory and the main growth lane.",
+        "caption": "Core interview territory and growth lane.",
     },
     "Hard": {
         "start": "#ef4444",
         "end": "#ec4899",
         "soft": "#301019",
         "badge": "H",
-        "caption": "Stretch problems that build deeper problem-solving range.",
+        "caption": "Stretch work for deeper problem-solving range.",
     },
 }
 
@@ -138,6 +138,16 @@ def to_int(value: Any, default: int | None = None) -> int | None:
         return default
 
 
+def compact_number(value: int | None) -> str:
+    if value is None:
+        return "n/a"
+    if value >= 1_000_000:
+        return f"{value / 1_000_000:.2f}M"
+    if value >= 1_000:
+        return f"{value / 1_000:.1f}K"
+    return str(value)
+
+
 def completion_rate(solved: int, total: int) -> float:
     if not total:
         return 0.0
@@ -148,6 +158,15 @@ def progress_bar_width(percent: float, max_width: float, min_width: float) -> fl
     if percent <= 0:
         return 0.0
     return min(max_width, max(max_width * percent / 100, min_width))
+
+
+def next_milestone(current: int) -> int:
+    milestones = [10, 25, 50, 75, 100, 150, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 4000]
+    for milestone in milestones:
+        if milestone > current:
+            return milestone
+    step = 500 if current >= 1000 else 100
+    return ((current // step) + 1) * step
 
 
 def write_text(path: Path, content: str) -> None:
@@ -163,42 +182,59 @@ def build_progress_card(
     theme: dict[str, str],
 ) -> None:
     percent = completion_rate(solved, total)
-    fill_width = progress_bar_width(percent, max_width=280, min_width=24)
+    fill_width = progress_bar_width(percent, max_width=286, min_width=26)
+    shine_width = min(fill_width, 122)
+    remaining = max(total - solved, 0)
     gradient_id = f"{filename.stem.replace('-', '_')}_gradient"
+    panel_id = f"{filename.stem.replace('-', '_')}_panel"
     glow_id = f"{filename.stem.replace('-', '_')}_glow"
     safe_title = escape(title)
     safe_caption = escape(theme["caption"])
 
     svg = f"""
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140" role="img" aria-labelledby="{filename.stem}_title {filename.stem}_desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="160" viewBox="0 0 440 160" role="img" aria-labelledby="{filename.stem}_title {filename.stem}_desc">
   <title id="{filename.stem}_title">{safe_title} progress card</title>
   <desc id="{filename.stem}_desc">{safe_title}: {solved} solved out of {total} total problems.</desc>
   <defs>
+    <linearGradient id="{panel_id}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1728" />
+      <stop offset="100%" stop-color="#09111d" />
+    </linearGradient>
     <linearGradient id="{gradient_id}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="{theme['start']}" />
       <stop offset="100%" stop-color="{theme['end']}" />
     </linearGradient>
     <filter id="{glow_id}" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feGaussianBlur stdDeviation="18" result="blur" />
       <feColorMatrix
         in="blur"
         type="matrix"
         values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0"
       />
     </filter>
+    <pattern id="{filename.stem}_pattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#223048" stroke-width="1" opacity="0.35" />
+    </pattern>
   </defs>
-  <rect width="420" height="140" rx="22" fill="#081120" />
-  <rect x="1" y="1" width="418" height="138" rx="21" fill="#0d172a" stroke="#1f2b45" />
-  <circle cx="360" cy="28" r="34" fill="{theme['start']}" opacity="0.18" filter="url(#{glow_id})" />
-  <rect x="24" y="24" width="56" height="56" rx="16" fill="{theme['soft']}" />
-  <text x="52" y="58" fill="white" font-size="26" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{escape(theme['badge'])}</text>
-  <text x="100" y="44" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{safe_title}</text>
-  <text x="100" y="73" fill="white" font-size="27" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,}</text>
-  <text x="170" y="73" fill="#94a3b8" font-size="16" font-family="Segoe UI,Arial,sans-serif">/ {total:,}</text>
-  <text x="380" y="44" fill="{theme['end']}" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
-  <rect x="100" y="92" width="280" height="14" rx="7" fill="#162237" />
-  <rect x="100" y="92" width="{fill_width:.2f}" height="14" rx="7" fill="url(#{gradient_id})" />
-  <text x="24" y="122" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">{safe_caption}</text>
+  <rect width="440" height="160" rx="26" fill="#050b15" />
+  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#{panel_id})" stroke="#1f2c43" />
+  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#{filename.stem}_pattern)" />
+  <circle cx="364" cy="28" r="62" fill="{theme['start']}" opacity="0.16" filter="url(#{glow_id})" />
+  <circle cx="410" cy="148" r="70" fill="{theme['end']}" opacity="0.08" />
+  <rect x="24" y="24" width="64" height="64" rx="22" fill="{theme['soft']}" stroke="#243149" />
+  <text x="56" y="63" fill="white" font-size="28" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{escape(theme['badge'])}</text>
+  <text x="104" y="40" fill="#7dd3fc" font-size="11" font-weight="700" letter-spacing="1.2" font-family="SFMono-Regular,Consolas,Monaco,monospace">LIVE METRIC</text>
+  <text x="104" y="66" fill="#f8fafc" font-size="24" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{safe_title}</text>
+  <rect x="346" y="24" width="70" height="30" rx="15" fill="#101a2d" stroke="{theme['end']}" stroke-opacity="0.45" />
+  <text x="381" y="44" fill="#f8fafc" font-size="13" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
+  <text x="104" y="98" fill="#ffffff" font-size="30" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,}</text>
+  <text x="182" y="98" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ {total:,}</text>
+  <rect x="104" y="112" width="286" height="14" rx="7" fill="#162338" />
+  <rect x="104" y="112" width="{fill_width:.2f}" height="14" rx="7" fill="url(#{gradient_id})" />
+  <rect x="104" y="112" width="{shine_width:.2f}" height="14" rx="7" fill="#ffffff" opacity="0.16" />
+  <rect x="24" y="120" width="90" height="24" rx="12" fill="#0f1a2d" stroke="#233149" />
+  <text x="69" y="136" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{remaining:,} LEFT</text>
+  <text x="126" y="136" fill="#9fb0c8" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">{safe_caption}</text>
 </svg>
     """
     write_text(filename, svg)
@@ -210,80 +246,115 @@ def build_dashboard(data: dict[str, Any], filename: Path) -> None:
     medium_percent = completion_rate(data["mediumSolved"], data["totalMedium"])
     hard_percent = completion_rate(data["hardSolved"], data["totalHard"])
     acceptance = "n/a" if data["acceptanceRate"] is None else f"{data['acceptanceRate']:.2f}%"
-    ranking = "n/a" if data["ranking"] is None else f"#{data['ranking']:,}"
+    ranking_compact = compact_number(data["ranking"])
+    next_target = next_milestone(data["totalSolved"])
+    to_target = max(next_target - data["totalSolved"], 0)
 
     rows = [
-        dashboard_row("Easy", data["easySolved"], data["totalEasy"], easy_percent, 112, "#22c55e", "#84cc16"),
-        dashboard_row("Medium", data["mediumSolved"], data["totalMedium"], medium_percent, 168, "#f59e0b", "#f97316"),
-        dashboard_row("Hard", data["hardSolved"], data["totalHard"], hard_percent, 224, "#ef4444", "#ec4899"),
+        dashboard_row("Easy", data["easySolved"], data["totalEasy"], easy_percent, 112, CARD_THEMES["Easy"]),
+        dashboard_row("Medium", data["mediumSolved"], data["totalMedium"], medium_percent, 190, CARD_THEMES["Medium"]),
+        dashboard_row("Hard", data["hardSolved"], data["totalHard"], hard_percent, 268, CARD_THEMES["Hard"]),
     ]
 
     svg = f"""
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="dashboard_title dashboard_desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="388" viewBox="0 0 920 388" role="img" aria-labelledby="dashboard_title dashboard_desc">
   <title id="dashboard_title">LeetCode dashboard for {escape(data['username'])}</title>
   <desc id="dashboard_desc">A visual summary of solved problems, completion percentages, acceptance rate, and ranking.</desc>
   <defs>
     <linearGradient id="dashboard_bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07111f" />
-      <stop offset="55%" stop-color="#0b1328" />
+      <stop offset="0%" stop-color="#06111f" />
+      <stop offset="50%" stop-color="#0b1428" />
       <stop offset="100%" stop-color="#111827" />
     </linearGradient>
     <linearGradient id="dashboard_accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#f97316" />
       <stop offset="100%" stop-color="#14b8a6" />
     </linearGradient>
-    <pattern id="dashboard_grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.35" />
+    <linearGradient id="dashboard_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1526" />
+      <stop offset="100%" stop-color="#09111d" />
+    </linearGradient>
+    <pattern id="dashboard_grid" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M 26 0 L 0 0 0 26" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.32" />
     </pattern>
+    <filter id="dashboard_glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.30 0"
+      />
+    </filter>
   </defs>
-  <rect width="900" height="320" rx="28" fill="url(#dashboard_bg)" />
-  <rect width="900" height="320" rx="28" fill="url(#dashboard_grid)" />
-  <circle cx="774" cy="60" r="74" fill="#f97316" opacity="0.10" />
-  <circle cx="842" cy="266" r="94" fill="#14b8a6" opacity="0.08" />
-  <rect x="24" y="24" width="852" height="272" rx="24" fill="#0a1324" fill-opacity="0.86" stroke="#1f2b45" />
+  <rect width="920" height="388" rx="30" fill="url(#dashboard_bg)" />
+  <rect width="920" height="388" rx="30" fill="url(#dashboard_grid)" />
+  <circle cx="760" cy="54" r="92" fill="#f97316" opacity="0.12" filter="url(#dashboard_glow)" />
+  <circle cx="842" cy="316" r="120" fill="#14b8a6" opacity="0.08" filter="url(#dashboard_glow)" />
+  <rect x="22" y="22" width="876" height="344" rx="26" fill="#081120" fill-opacity="0.82" stroke="#213149" />
 
-  <text x="48" y="58" fill="#f8fafc" font-size="28" font-weight="700" font-family="Segoe UI,Arial,sans-serif">LeetCode Progress Dashboard</text>
-  <text x="48" y="84" fill="#94a3b8" font-size="14" font-family="Segoe UI,Arial,sans-serif">@{escape(data['username'])} | synced with official LeetCode GraphQL</text>
+  <text x="42" y="58" fill="#f8fafc" font-size="29" font-weight="700" font-family="Segoe UI,Arial,sans-serif">LeetCode Progress Dashboard</text>
+  <text x="42" y="82" fill="#93a4bd" font-size="14" font-family="Segoe UI,Arial,sans-serif">@{escape(data['username'])} | official GraphQL source | rendered as custom SVG</text>
 
-  <text x="48" y="132" fill="#94a3b8" font-size="14" letter-spacing="1.1" font-family="SFMono-Regular,Consolas,Monaco,monospace">TOTAL SOLVED</text>
-  <text x="48" y="182" fill="white" font-size="52" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{data['totalSolved']:,}</text>
-  <text x="158" y="182" fill="#94a3b8" font-size="22" font-family="Segoe UI,Arial,sans-serif">/ {data['totalQuestions']:,}</text>
-  <rect x="48" y="204" width="320" height="16" rx="8" fill="#162237" />
-  <rect x="48" y="204" width="{progress_bar_width(total_percent, max_width=320, min_width=28):.2f}" height="16" rx="8" fill="url(#dashboard_accent)" />
-  <text x="48" y="248" fill="#e2e8f0" font-size="18" font-family="Segoe UI,Arial,sans-serif">{total_percent:.2f}% of all public problems completed</text>
+  <rect x="646" y="38" width="100" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="696" y="56" fill="#dbeafe" font-size="11.5" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">OFFICIAL DATA</text>
+  <rect x="758" y="38" width="118" height="28" rx="14" fill="#0f1b30" stroke="#24344d" />
+  <text x="817" y="56" fill="#d1fae5" font-size="11.5" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">AUTO REFRESH</text>
 
-  <rect x="48" y="264" width="156" height="48" rx="18" fill="#111c30" stroke="#1f2b45" />
-  <text x="64" y="286" fill="#94a3b8" font-size="12" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">ACCEPTANCE</text>
-  <text x="64" y="304" fill="white" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{acceptance}</text>
+  <rect x="42" y="104" width="392" height="244" rx="28" fill="url(#dashboard_card)" stroke="#22314a" />
+  <circle cx="334" cy="152" r="62" fill="#f97316" opacity="0.14" filter="url(#dashboard_glow)" />
+  <circle cx="364" cy="270" r="72" fill="#14b8a6" opacity="0.08" />
 
-  <rect x="220" y="264" width="200" height="48" rx="18" fill="#111c30" stroke="#1f2b45" />
-  <text x="236" y="286" fill="#94a3b8" font-size="12" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">GLOBAL RANK</text>
-  <text x="236" y="304" fill="white" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{ranking}</text>
+  <text x="66" y="136" fill="#8fa2bb" font-size="12" letter-spacing="1.2" font-family="SFMono-Regular,Consolas,Monaco,monospace">TOTAL SOLVED</text>
+  <rect x="304" y="118" width="108" height="46" rx="18" fill="#0f1a2d" stroke="#24344d" />
+  <text x="358" y="138" fill="#8fa2bb" font-size="11" letter-spacing="0.8" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">GLOBAL RANK</text>
+  <text x="358" y="156" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">{ranking_compact}</text>
 
-  <text x="470" y="58" fill="#94a3b8" font-size="14" letter-spacing="1" font-family="SFMono-Regular,Consolas,Monaco,monospace">DIFFICULTY BREAKDOWN</text>
+  <text x="66" y="202" fill="#ffffff" font-size="60" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{data['totalSolved']:,}</text>
+  <text x="196" y="202" fill="#94a3b8" font-size="24" font-family="Segoe UI,Arial,sans-serif">/ {data['totalQuestions']:,}</text>
+  <text x="66" y="232" fill="#dbe5f4" font-size="18" font-family="Segoe UI,Arial,sans-serif">{total_percent:.2f}% of all public LeetCode problems completed</text>
+
+  <rect x="66" y="248" width="306" height="18" rx="9" fill="#162339" />
+  <rect x="66" y="248" width="{progress_bar_width(total_percent, max_width=306, min_width=30):.2f}" height="18" rx="9" fill="url(#dashboard_accent)" />
+  <rect x="66" y="248" width="{min(progress_bar_width(total_percent, max_width=306, min_width=30), 120):.2f}" height="18" rx="9" fill="#ffffff" opacity="0.16" />
+
+  <rect x="66" y="286" width="148" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
+  <text x="84" y="306" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">NEXT TARGET</text>
+  <text x="84" y="323" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{next_target:,}</text>
+  <text x="150" y="323" fill="#9fb0c8" font-size="13" font-family="Segoe UI,Arial,sans-serif">{to_target:,} to go</text>
+
+  <rect x="228" y="286" width="144" height="46" rx="18" fill="#0f1b30" stroke="#24344d" />
+  <text x="246" y="306" fill="#8fa2bb" font-size="11" letter-spacing="0.8" font-family="SFMono-Regular,Consolas,Monaco,monospace">ACCEPTANCE</text>
+  <text x="246" y="323" fill="#ffffff" font-size="22" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{acceptance}</text>
+
+  <text x="66" y="352" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Last refresh: {escape(data['lastUpdated'])} | Generated automatically by Python + GitHub Actions.</text>
+
+  <text x="474" y="82" fill="#93a4bd" font-size="13" letter-spacing="1" font-family="SFMono-Regular,Consolas,Monaco,monospace">DIFFICULTY BREAKDOWN</text>
   {''.join(rows)}
-  <text x="470" y="282" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">Last refresh: {escape(data['lastUpdated'])}</text>
-  <text x="470" y="302" fill="#64748b" font-size="12" font-family="Segoe UI,Arial,sans-serif">Generated automatically by Python + GitHub Actions.</text>
+  <text x="474" y="354" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Color and layout are tuned for GitHub README rendering.</text>
 </svg>
     """
     write_text(filename, svg)
 
 
-def dashboard_row(label: str, solved: int, total: int, percent: float, y: int, start: str, end: str) -> str:
-    fill_width = progress_bar_width(percent, max_width=260, min_width=20)
+def dashboard_row(label: str, solved: int, total: int, percent: float, y: int, theme: dict[str, str]) -> str:
+    fill_width = progress_bar_width(percent, max_width=126, min_width=18)
+    remaining = max(total - solved, 0)
     gradient_id = f"{label.lower()}_dashboard_gradient"
     return f"""
   <defs>
     <linearGradient id="{gradient_id}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{start}" />
-      <stop offset="100%" stop-color="{end}" />
+      <stop offset="0%" stop-color="{theme['start']}" />
+      <stop offset="100%" stop-color="{theme['end']}" />
     </linearGradient>
   </defs>
-  <text x="470" y="{y}" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{escape(label)}</text>
-  <text x="792" y="{y}" fill="#94a3b8" font-size="16" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{solved:,} / {total:,}</text>
-  <rect x="470" y="{y + 18}" width="260" height="14" rx="7" fill="#162237" />
-  <rect x="470" y="{y + 18}" width="{fill_width:.2f}" height="14" rx="7" fill="url(#{gradient_id})" />
-  <text x="792" y="{y + 31}" fill="{end}" font-size="14" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
+  <rect x="474" y="{y}" width="386" height="60" rx="20" fill="#0c1729" stroke="#22314a" />
+  <rect x="492" y="{y + 15}" width="58" height="30" rx="15" fill="#101b30" stroke="{theme['end']}" stroke-opacity="0.30" />
+  <text x="521" y="{y + 34}" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">{escape(label.upper())}</text>
+  <text x="572" y="{y + 28}" fill="#f8fafc" font-size="19" font-weight="700" font-family="Segoe UI,Arial,sans-serif">{solved:,} solved</text>
+  <text x="572" y="{y + 47}" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">{remaining:,} remaining of {total:,}</text>
+  <rect x="716" y="{y + 18}" width="126" height="12" rx="6" fill="#152239" />
+  <rect x="716" y="{y + 18}" width="{fill_width:.2f}" height="12" rx="6" fill="url(#{gradient_id})" />
+  <text x="842" y="{y + 48}" fill="{theme['end']}" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">{percent:.2f}%</text>
     """
 
 

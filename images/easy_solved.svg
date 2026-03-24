@@ -1,30 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140" role="img" aria-labelledby="easy_solved_title easy_solved_desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="160" viewBox="0 0 440 160" role="img" aria-labelledby="easy_solved_title easy_solved_desc">
   <title id="easy_solved_title">Easy progress card</title>
   <desc id="easy_solved_desc">Easy: 10 solved out of 933 total problems.</desc>
   <defs>
+    <linearGradient id="easy_solved_panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1728" />
+      <stop offset="100%" stop-color="#09111d" />
+    </linearGradient>
     <linearGradient id="easy_solved_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#22c55e" />
       <stop offset="100%" stop-color="#84cc16" />
     </linearGradient>
     <filter id="easy_solved_glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feGaussianBlur stdDeviation="18" result="blur" />
       <feColorMatrix
         in="blur"
         type="matrix"
         values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0"
       />
     </filter>
+    <pattern id="easy_solved_pattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#223048" stroke-width="1" opacity="0.35" />
+    </pattern>
   </defs>
-  <rect width="420" height="140" rx="22" fill="#081120" />
-  <rect x="1" y="1" width="418" height="138" rx="21" fill="#0d172a" stroke="#1f2b45" />
-  <circle cx="360" cy="28" r="34" fill="#22c55e" opacity="0.18" filter="url(#easy_solved_glow)" />
-  <rect x="24" y="24" width="56" height="56" rx="16" fill="#132a1d" />
-  <text x="52" y="58" fill="white" font-size="26" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">E</text>
-  <text x="100" y="44" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Easy</text>
-  <text x="100" y="73" fill="white" font-size="27" font-weight="700" font-family="Segoe UI,Arial,sans-serif">10</text>
-  <text x="170" y="73" fill="#94a3b8" font-size="16" font-family="Segoe UI,Arial,sans-serif">/ 933</text>
-  <text x="380" y="44" fill="#84cc16" font-size="16" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.07%</text>
-  <rect x="100" y="92" width="280" height="14" rx="7" fill="#162237" />
-  <rect x="100" y="92" width="24.00" height="14" rx="7" fill="url(#easy_solved_gradient)" />
-  <text x="24" y="122" fill="#94a3b8" font-size="13" font-family="Segoe UI,Arial,sans-serif">Warm-up reps that keep the fundamentals sharp.</text>
+  <rect width="440" height="160" rx="26" fill="#050b15" />
+  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#easy_solved_panel)" stroke="#1f2c43" />
+  <rect x="1" y="1" width="438" height="158" rx="25" fill="url(#easy_solved_pattern)" />
+  <circle cx="364" cy="28" r="62" fill="#22c55e" opacity="0.16" filter="url(#easy_solved_glow)" />
+  <circle cx="410" cy="148" r="70" fill="#84cc16" opacity="0.08" />
+  <rect x="24" y="24" width="64" height="64" rx="22" fill="#132a1d" stroke="#243149" />
+  <text x="56" y="63" fill="white" font-size="28" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">E</text>
+  <text x="104" y="40" fill="#7dd3fc" font-size="11" font-weight="700" letter-spacing="1.2" font-family="SFMono-Regular,Consolas,Monaco,monospace">LIVE METRIC</text>
+  <text x="104" y="66" fill="#f8fafc" font-size="24" font-weight="700" font-family="Segoe UI,Arial,sans-serif">Easy</text>
+  <rect x="346" y="24" width="70" height="30" rx="15" fill="#101a2d" stroke="#84cc16" stroke-opacity="0.45" />
+  <text x="381" y="44" fill="#f8fafc" font-size="13" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">1.07%</text>
+  <text x="104" y="98" fill="#ffffff" font-size="30" font-weight="700" font-family="Segoe UI,Arial,sans-serif">10</text>
+  <text x="182" y="98" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ 933</text>
+  <rect x="104" y="112" width="286" height="14" rx="7" fill="#162338" />
+  <rect x="104" y="112" width="26.00" height="14" rx="7" fill="url(#easy_solved_gradient)" />
+  <rect x="104" y="112" width="26.00" height="14" rx="7" fill="#ffffff" opacity="0.16" />
+  <rect x="24" y="120" width="90" height="24" rx="12" fill="#0f1a2d" stroke="#233149" />
+  <text x="69" y="136" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">923 LEFT</text>
+  <text x="126" y="136" fill="#9fb0c8" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Keeps the fundamentals sharp.</text>
 </svg>
