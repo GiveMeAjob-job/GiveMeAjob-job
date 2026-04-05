@@ -148,7 +148,7 @@ I use this profile as a living snapshot of how I learn, build, and improve in pu
 </table>
 
 <p align="center">
-  <sub>Last refresh: 2026-04-04 02:41 UTC | Source: official LeetCode GraphQL | Synced via GitHub Actions</sub>
+  <sub>Last refresh: 2026-04-05 03:17 UTC | Source: official LeetCode GraphQL | Synced via GitHub Actions</sub>
 </p>
 <!-- LEETCODE_STATS:END -->
 
