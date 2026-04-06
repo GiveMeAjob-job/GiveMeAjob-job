@@ -130,25 +130,25 @@ I use this profile as a living snapshot of how I learn, build, and improve in pu
 <tr>
   <td>Medium</td>
   <td><b>24</b></td>
-  <td>2,033</td>
+  <td>2,036</td>
   <td>1.18%</td>
 </tr>
 <tr>
   <td>Hard</td>
   <td><b>2</b></td>
-  <td>920</td>
+  <td>921</td>
   <td>0.22%</td>
 </tr>
 <tr>
   <td>Total</td>
   <td><b>36</b></td>
-  <td>3,888</td>
-  <td>0.93%</td>
+  <td>3,892</td>
+  <td>0.92%</td>
 </tr>
 </table>
 
 <p align="center">
-  <sub>Last refresh: 2026-04-05 03:17 UTC | Source: official LeetCode GraphQL | Synced via GitHub Actions</sub>
+  <sub>Last refresh: 2026-04-06 03:20 UTC | Source: official LeetCode GraphQL | Synced via GitHub Actions</sub>
 </p>
 <!-- LEETCODE_STATS:END -->
 
