@@ -51,7 +51,7 @@
   <text x="358" y="164" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">2.98M</text>
 
   <text x="66" y="210" fill="#ffffff" font-size="60" font-weight="700" font-family="Segoe UI,Arial,sans-serif">36</text>
-  <text x="196" y="210" fill="#94a3b8" font-size="24" font-family="Segoe UI,Arial,sans-serif">/ 3,893</text>
+  <text x="196" y="210" fill="#94a3b8" font-size="24" font-family="Segoe UI,Arial,sans-serif">/ 3,897</text>
   <text x="66" y="240" fill="#dbe5f4" font-size="18" font-family="Segoe UI,Arial,sans-serif">0.92% of all public LeetCode problems completed</text>
 
   <rect x="66" y="258" width="306" height="18" rx="9" fill="#162339" />
@@ -80,7 +80,7 @@
   <rect x="492" y="150" width="62" height="32" rx="16" fill="#101b30" stroke="#84cc16" stroke-opacity="0.30" />
   <text x="523" y="171" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">EASY</text>
   <text x="574" y="162" fill="#f8fafc" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">10 solved</text>
-  <text x="574" y="184" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">925 remaining of 935</text>
+  <text x="574" y="184" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">926 remaining of 936</text>
   <rect x="716" y="154" width="126" height="12" rx="6" fill="#152239" />
   <rect x="716" y="154" width="18.00" height="12" rx="6" fill="url(#easy_dashboard_gradient)" />
   <text x="842" y="188" fill="#84cc16" font-size="15" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.07%</text>
@@ -95,7 +95,7 @@
   <rect x="492" y="236" width="62" height="32" rx="16" fill="#101b30" stroke="#f97316" stroke-opacity="0.30" />
   <text x="523" y="257" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">MEDIUM</text>
   <text x="574" y="248" fill="#f8fafc" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">24 solved</text>
-  <text x="574" y="270" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">2,013 remaining of 2,037</text>
+  <text x="574" y="270" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">2,015 remaining of 2,039</text>
   <rect x="716" y="240" width="126" height="12" rx="6" fill="#152239" />
   <rect x="716" y="240" width="18.00" height="12" rx="6" fill="url(#medium_dashboard_gradient)" />
   <text x="842" y="274" fill="#f97316" font-size="15" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">1.18%</text>
@@ -110,10 +110,10 @@
   <rect x="492" y="322" width="62" height="32" rx="16" fill="#101b30" stroke="#ec4899" stroke-opacity="0.30" />
   <text x="523" y="343" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">HARD</text>
   <text x="574" y="334" fill="#f8fafc" font-size="18" font-weight="700" font-family="Segoe UI,Arial,sans-serif">2 solved</text>
-  <text x="574" y="356" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">919 remaining of 921</text>
+  <text x="574" y="356" fill="#91a3bd" font-size="13.5" font-family="Segoe UI,Arial,sans-serif">920 remaining of 922</text>
   <rect x="716" y="326" width="126" height="12" rx="6" fill="#152239" />
   <rect x="716" y="326" width="18.00" height="12" rx="6" fill="url(#hard_dashboard_gradient)" />
   <text x="842" y="360" fill="#ec4899" font-size="15" font-weight="700" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">0.22%</text>
     
-  <text x="42" y="378" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Last refresh: 2026-04-11 02:46 UTC | Generated automatically by Python + GitHub Actions.</text>
+  <text x="42" y="378" fill="#7f91aa" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Last refresh: 2026-04-12 03:25 UTC | Generated automatically by Python + GitHub Actions.</text>
 </svg>
