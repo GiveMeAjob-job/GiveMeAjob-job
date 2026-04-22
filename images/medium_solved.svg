@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="172" viewBox="0 0 440 172" role="img" aria-labelledby="medium_solved_title medium_solved_desc">
   <title id="medium_solved_title">Medium progress card</title>
-  <desc id="medium_solved_desc">Medium: 24 solved out of 2044 total problems.</desc>
+  <desc id="medium_solved_desc">Medium: 24 solved out of 2045 total problems.</desc>
   <defs>
     <linearGradient id="medium_solved_panel" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0d1728" />
@@ -34,11 +34,11 @@
   <rect x="346" y="24" width="70" height="30" rx="15" fill="#101a2d" stroke="#f97316" stroke-opacity="0.45" />
   <text x="381" y="44" fill="#f8fafc" font-size="13" font-weight="700" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">1.17%</text>
   <text x="104" y="104" fill="#ffffff" font-size="32" font-weight="700" font-family="Segoe UI,Arial,sans-serif">24</text>
-  <text x="184" y="104" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ 2,044</text>
+  <text x="184" y="104" fill="#94a3b8" font-size="18" font-family="Segoe UI,Arial,sans-serif">/ 2,045</text>
   <rect x="104" y="120" width="286" height="14" rx="7" fill="#162338" />
   <rect x="104" y="120" width="26.00" height="14" rx="7" fill="url(#medium_solved_gradient)" />
   <rect x="104" y="120" width="26.00" height="14" rx="7" fill="#ffffff" opacity="0.16" />
   <rect x="24" y="140" width="96" height="28" rx="14" fill="#0f1a2d" stroke="#233149" />
-  <text x="72" y="158" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">2,020 LEFT</text>
+  <text x="72" y="158" fill="#e2e8f0" font-size="11" font-weight="700" text-anchor="middle" font-family="SFMono-Regular,Consolas,Monaco,monospace">2,021 LEFT</text>
   <text x="132" y="158" fill="#9fb0c8" font-size="12.5" font-family="Segoe UI,Arial,sans-serif">Core interview territory and growth lane.</text>
 </svg>
